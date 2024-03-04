@@ -3,7 +3,7 @@ import sqlite3
 
 class Database:
 
-    def __init__(self, db:str):
+    def __init__(self, db):
         self.db = db
         self.connection = self.connect()
 
@@ -27,7 +27,7 @@ class Database:
         query_exec = self.connection.cursor()
         query_exec.execute(query,(name,description,price))
         self.connection.commit()
-        # return query_exec.lastrowid
+
 
     def get_items(self,table_name:str):
         query_exec = self.connection.cursor()
